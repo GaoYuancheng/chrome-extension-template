@@ -1,0 +1,13 @@
+{
+  "name": "chrome-cookie-changer",
+  "version": "1.0",
+  "description": "Build an Extension!",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "./dist/src/background.js"
+  },
+  "action": {
+    "default_popup": "./dist/src/index.html"
+  },
+  "permissions": ["cookies"]
+}
