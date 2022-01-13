@@ -12,9 +12,17 @@ export default defineConfig({
   },
   base: "./",
 
+  css: {
+    preprocessorOptions: {
+      // 支持less
+      less: {
+        javascriptEnabled: true,
+      },
+    },
+  },
+
   build: {
     outDir: "dist/src",
-    emptyOutDir: false, // TODO: 去掉之后copy插件就不生效了，应该是执行时机问题（copy在清空dist之前执行了）
 
     rollupOptions: {
       input: {
