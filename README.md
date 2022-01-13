@@ -6,13 +6,12 @@ chrome插件开发文档
 
 > https://developer.chrome.com/docs/extensions/reference/
 
-> react 理论上也可切换为vue
+本模板使用gyc-cli自动生成
 
 ### 开发
-// 目前先拷贝
-1. cp -R ../chrome-extension-template ../chrome-extension  拷贝一份
-2. cd ../chrome-extension && rm -rf .git && git init 切换目录并且 初始化git
-3. yarn
+1. yarn global add gyc-cli
+2. gyc-cli init
+3. cd ./{packageName}
 4. yarn watch 并且把dist文件夹作为一个插件拖入chrome中
 
 ### 目录
@@ -34,8 +33,10 @@ chrome插件开发文档
 
 
 ### 注意  
-1. 开发时直接拖入 dist 到chrome插件中
-2. 打包时间过长可以 先去掉 build中的 tsc
+1. 使用yarn安装报命令找不到的情况
+   
+   参考  [https://classic.yarnpkg.com/en/docs/cli/global]('https://classic.yarnpkg.com/en/docs/cli/global')
+2. 开发时直接拖入 dist 到chrome插件中
 
 
 ### TODO
@@ -43,4 +44,3 @@ chrome插件开发文档
 
 [ ] husky
 
-[ ] 使用命令行生成 模板 
