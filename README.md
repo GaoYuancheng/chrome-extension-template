@@ -31,14 +31,14 @@ chrome插件开发文档
 └── yarn.lock
 ```
 
+### 添加一个husky
+1. npx husky install  
+2. npx husky add .husky/pre-commit "node_modules/.bin/lint-staged"
+3. package.json 对应修改
+
 
 ### 注意  
 1. 使用yarn安装报命令找不到的情况
    
    参考  [https://classic.yarnpkg.com/en/docs/cli/global]('https://classic.yarnpkg.com/en/docs/cli/global')
 2. 开发时直接拖入 dist 到chrome插件中
-
-
-### TODO
-[ ] husky
-
