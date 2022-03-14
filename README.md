@@ -40,7 +40,5 @@ chrome插件开发文档
 
 
 ### TODO
-[ ] eslint
-
 [ ] husky
 
