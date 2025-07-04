@@ -1,13 +1,42 @@
 {
-  "name": "chrome-cookie-changer",
+  "name": "chrome-extension-template",
   "version": "1.0",
   "description": "Build an Extension!",
   "manifest_version": 3,
   "background": {
-    "service_worker": "./dist/src/background.js"
+    "service_worker": "./src/background.js"
+  },
+  "icons": {
+    "16": "./static/img/cat.png",
+    "32": "./static/img/cat.png",
+    "48": "./static/img/cat.png",
+    "128": "./static/img/cat.png"
   },
   "action": {
-    "default_popup": "./dist/src/index.html"
+    "default_popup": "./defaultPopup.html"
   },
-  "permissions": ["cookies"]
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["./src/contentScriptStart.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["./src/contentScriptEnd.js"],
+      "run_at": "document_end",
+      "world": "MAIN"
+    }
+  ],
+  "permissions": [
+    "cookies",
+    "tabs",
+    "storage",
+    "scripting",
+    "activeTab",
+    "clipboardRead",
+    "clipboardWrite"
+  ],
+  "host_permissions": ["<all_urls>"]
 }
